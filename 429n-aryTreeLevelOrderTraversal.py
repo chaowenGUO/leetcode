@@ -13,6 +13,6 @@ class Solution:
         """
         result, level = [], [root]
         while root and level:
-            result += [[node.val for node in level]]
+            result += [node.val for node in level],
             level = [child for node in level for child in node.children if child]
         return result
