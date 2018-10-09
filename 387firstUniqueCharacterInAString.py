@@ -4,8 +4,8 @@ class Solution:
         :type s: str
         :rtype: int
         """
-        dictionary = {}
-        for char in s: dictionary[char] = dictionary.get(char, 0) + 1
+        import collections
+        dictionary = collections.Counter(s)
         for index, char in enumerate(s):
             if dictionary.get(char) == 1: return index
         return -1
