@@ -6,6 +6,6 @@ class Solution:
         """
         result = ''
         for char in zip(*strs):
-            if len(set(char)) == 1: result += char[0]
+            if len({*char}) == 1: result += char[0]
             else: break
         return result
