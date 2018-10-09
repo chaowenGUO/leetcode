@@ -5,4 +5,4 @@ class Solution:
         :type t: str
         :rtype: bool
         """
-        return len(set(zip(s, t)))== len(set(s)) == len(set(t))
+        return len({*zip(s, t)}) == len({*s}) == len({*t})
