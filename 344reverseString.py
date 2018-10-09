@@ -4,6 +4,10 @@ class Solution:
         :type s: str
         :rtype: str
         """
-        result = ''
-        for _ in range(len(s) - 1, -1, -1): result += s[_]
-        return result
+        s = [*s]
+        left, right = 0, len(s) - 1
+        while left < right:
+            s[left], s[right] = s[right], s[left]
+            left += 1
+            right -= 1
+        return ''.join(s)
