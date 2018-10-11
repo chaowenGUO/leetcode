@@ -24,10 +24,10 @@ class Solution:
         :rtype: ListNode
         """
         if not head or not head.next: return head    
-        prev = slow = fast = head
+        slow, fast = head, head.next
         while fast and fast.next:
-            prev = slow
             fast = fast.next.next
             slow = slow.next
-        prev.next = None
-        return self.merge(*map(self.sortList, (head, slow)))
+        fast = slow.next
+        slow.next = None
+        return self.merge(*map(self.sortList, (head, fast)))
