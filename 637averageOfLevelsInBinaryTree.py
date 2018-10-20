@@ -14,6 +14,6 @@ class Solution:
         import statistics
         result, level = [], [root]
         while root and level:
-            result += statistics.mean([node.val for node in level]),
+            result += statistics.mean(node.val for node in level),
             level = [child for node in level for child in (node.left, node.right) if child]
         return result
