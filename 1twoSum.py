@@ -8,4 +8,4 @@ class Solution:
         dictionary = {}
         for index, num in enumerate(nums):
             if num in dictionary: return [index, dictionary.get(num)]
-            else: dictionary[target - num] = index
+            else: dictionary.setdefault(target - num, index)
