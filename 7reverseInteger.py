@@ -10,4 +10,5 @@ class Solution:
         while x:
             result = result * 10 + x % 10
             x //= 10
-        return sign * result if result < 2**31 else 0
+        result = sign * result
+        return result if -(1 << 31) <= result <= (1 << 31) - 1 else 0
