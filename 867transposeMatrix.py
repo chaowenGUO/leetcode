@@ -4,4 +4,4 @@ class Solution:
         :type A: List[List[int]]
         :rtype: List[List[int]]
         """
-        return [*zip(*A)]
+        return [*map(list,zip(*A))]
