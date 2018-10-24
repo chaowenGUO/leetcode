@@ -14,5 +14,4 @@ class Solution:
             middle = left + (right - left) // 2
             if guess(middle) == 1: left = middle
             else: right = middle
-        if guess(left) == 0: return left
-        else: return right
+        return left if guess(left) == 0 else right
