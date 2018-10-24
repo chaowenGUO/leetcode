@@ -9,5 +9,4 @@ class Solution:
             middle = left + (right - left) // 2
             if middle**2 < x: left = middle
             else: right = middle
-        if right**2 == x : return right
-        else: return left
+        return right if right**2 == x else left
