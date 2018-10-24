@@ -12,5 +12,4 @@ class Solution:
             middle = left + (right - left) // 2
             if matrix[middle // column][middle % column] < target: left = middle
             else: right = middle
-        if matrix[left // column][left % column] == target or matrix[right // column][right % column] == target: return True
-        else: return False
+        return True if matrix[left // column][left % column] == target or matrix[right // column][right % column] == target else False
