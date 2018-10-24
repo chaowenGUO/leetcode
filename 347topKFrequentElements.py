@@ -6,4 +6,4 @@ class Solution:
         :rtype: List[int]
         """
         import collections
-        return [num[0] for num in collections.Counter(nums).most_common(k)]
+        return [_[0] for _ in collections.Counter(nums).most_common(k)]
