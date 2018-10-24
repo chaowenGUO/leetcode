@@ -6,4 +6,4 @@ class Solution:
         :rtype: List[str]
         """
         import collections
-        return [word[0] for word in collections.Counter((A + ' ' + B).split()).items() if word[1] == 1]
+        return [_[0] for _ in collections.Counter((A + ' ' + B).split()).items() if _[1] == 1]
