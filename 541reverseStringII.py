@@ -6,5 +6,5 @@ class Solution:
         :rtype: str
         """
         s = [*s]
-        for i in range(0, len(s), 2 * k): s[i:i + k] = reversed(s[i:i + k])
+        for _ in range(0, len(s), 2 * k): s[_:_ + k] = reversed(s[_:_ + k])
         return ''.join(s)
