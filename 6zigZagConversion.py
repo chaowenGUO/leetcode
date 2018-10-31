@@ -5,7 +5,7 @@ class Solution:
         :type numRows: int
         :rtype: str
         """
-        if numRows == 1 or numRows >= len(s): return s
+        if numRows == 1: return s
         result = [''] * numRows
         row, direction = 0, 1
         for char in s:
