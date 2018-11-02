@@ -7,7 +7,7 @@ class Solution:
         """
         if numRows == 1: return s
         else:
-            result = [' '] * numRows
+            result = [''] * numRows
             row, direction = 0, 1
             for char in s:
                 result[row] += char
