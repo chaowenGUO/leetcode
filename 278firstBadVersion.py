@@ -1,4 +1,4 @@
-# The isBadVersion API is already defined for you.
+​​# The isBadVersion API is already defined for you.
 # @param version, an integer
 # @return a bool
 # def isBadVersion(version):
@@ -14,5 +14,4 @@ class Solution:
             middle = left + (right - left) // 2
             if not isBadVersion(middle): left = middle
             else: right = middle
-        if isBadVersion(left): return left
-        else: return right
+        return left if isBadVersion(left) else right
