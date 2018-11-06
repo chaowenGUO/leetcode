@@ -7,8 +7,8 @@ class Solution:
         import math
         left, right = 0, int(math.sqrt(c))
         while left <= right:
-            square = left**2 + right**2
-            if square == c: return True
-            elif square < c: left += 1
+            _ = left**2 + right**2
+            if _ == c: return True
+            elif _ < c: left += 1
             else: right -= 1
         return False
