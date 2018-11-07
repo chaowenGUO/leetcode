@@ -7,8 +7,8 @@ class Solution:
         """
         if not matrix or not matrix[0]: return False
         else:
-            j = -1
             for row in matrix:
-                while j + len(row) and row[j] > target: j -= 1
-                if row[j] == target: return True
+                for column in reversed(row):
+                    if column <= target: break
+                if column == target: return True
             return False
