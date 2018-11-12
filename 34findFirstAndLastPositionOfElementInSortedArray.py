@@ -26,4 +26,4 @@ class Solution:
         :rtype: List[int]
         """
         if not nums: return [-1] * 2
-        else: return [self.lower(nums, target), self.upper(nums, target)]
+        else: return [_(nums, target) for _ in (self.lower, self.upper)]
