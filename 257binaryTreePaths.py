@@ -13,4 +13,4 @@ class Solution:
         """
         if not root: return []
         elif not root.left and not root.right: return [str(root.val)]
-        else: return [str(root.val) + '->' + _ for child in (root.left, root.right) for _ in self.binaryTreePaths(child) if child]
+        else: return [str(root.val) + '->' + _ for child in (root.left, root.right) for _ in self.binaryTreePaths(child)]
