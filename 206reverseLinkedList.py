@@ -17,3 +17,16 @@ class Solution:
             current.next = result
             result = current
         return result
+ 
+class Solution:
+    def reverseList(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        if not head or not head.next: return head
+        else:
+            result = self.reverseList(head.next)
+            head.next.next = head
+            head.next = None
+            return result
