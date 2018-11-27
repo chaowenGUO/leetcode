@@ -13,7 +13,7 @@ class Solution:
         if not headA or not headB: return None
         else:
             a, b = headA, headB
-            while a and b and a !=b:
+            while a and b and a != b:
                 a = a.next
                 b = b.next
                 if a == b: return b
