@@ -4,6 +4,5 @@ class Solution:
         :type n: int
         :rtype: int
         """
-        a = b = 1
-        for _ in range(n): a, b = b, a + b
-        return a
+        import functools
+        return functools.reduce(lambda result, _: [result[1], sum(result)], range(n), [1] * 2)[0]
