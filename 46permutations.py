@@ -4,6 +4,5 @@ class Solution:
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-        result = [[]]
-        for num in nums: result = [permutation[:index] + [num] + permutation[index:] for permutation in result for index in range(len(permutation) + 1)]
-        return result
+        import functools
+        return functools.reduce(lambda result, num: [permutation[_:] + [num] + permutation[:_] for permutation in result for _ in range(len(permutation) + 1)], nums, [[]])
