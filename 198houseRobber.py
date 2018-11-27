@@ -4,6 +4,5 @@ class Solution:
         :type nums: List[int]
         :rtype: int
         """
-        a = b = 0
-        for num in nums: a, b = b, max(a + num, b)
-        return b
+        import functools
+        return functools.reduce(lambda result, num: [result[1], max(result[1], result[0] + num)], nums, [0] * 2)[1]
