@@ -4,6 +4,5 @@ class Solution:
         :type numRows: int
         :rtype: List[List[int]]
         """
-        result = [[1]]
-        for _ in range(numRows - 1): result += [sum(_) for _ in zip([0] + result[-1], result[-1] + [0])],
-        return result[:numRows]
+        import functools
+        return functools.reduce(lambda result, _ : result + [[sum(_) for _ in zip([0] + result[-1], result[-1] + [0])]], range(numRows - 1), [[1]])[:numRows]
