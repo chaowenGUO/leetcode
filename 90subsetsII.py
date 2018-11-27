@@ -4,6 +4,5 @@ class Solution:
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-        result = [[]]
-        for num in sorted(nums): result += [_ + [num] for _ in result if _ + [num] not in result]
-        return result
+        import functools
+        return functools.reduce(lambda result, num: result + [_ + [num] for _ in result if _ + [num] not in result], sorted(nums), [[]])
