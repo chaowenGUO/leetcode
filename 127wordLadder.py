@@ -7,7 +7,7 @@ class Solution:
         :rtype: int
         """
         import collections
-        wordList = set(wordList)
+        wordList = {*wordList}
         queue = collections.deque([[beginWord, 1]])
         wordSet = {char for word in wordList for char in word}
         while queue:
