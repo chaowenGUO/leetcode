@@ -8,6 +8,6 @@ class Solution:
         symbols = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
         result = ''
         for symbol, value in zip(symbols, values):
-            result += symbol * int(num // value)
+            result += symbol * (num // value)
             num %= value
         return result
