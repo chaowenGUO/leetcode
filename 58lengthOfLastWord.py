@@ -4,8 +4,5 @@ class Solution:
         :type s: str
         :rtype: int
         """
-        result = 0
-        for _ in reversed(s.strip()):
-            if _ != ' ': result += 1
-            else: break
-        return result
+        import itertools
+        return sum(1 for _ in itertools.takewhile(lambda char: char != ' ', reversed(s.strip())))
