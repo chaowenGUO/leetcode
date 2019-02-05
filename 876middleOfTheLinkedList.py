@@ -5,11 +5,7 @@
 #         self.next = None
 
 class Solution:
-    def middleNode(self, head):
-        """
-        :type head: ListNode
-        :rtype: ListNode
-        """
+    def middleNode(self, head: ListNode) -> ListNode:
         fast = slow = head
         while fast and fast.next:
             fast = fast.next.next
