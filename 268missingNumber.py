@@ -1,8 +1,5 @@
+import typing
 class Solution:
-    def missingNumber(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+    def missingNumber(self, nums: typing.List[int]) -> int:
         length = len(nums)
-        return length * (length + 1) // 2 - sum(nums)
+        return (length + 1) * length // 2 - sum(nums)
