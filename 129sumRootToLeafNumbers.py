@@ -6,14 +6,10 @@
 #         self.right = None
 
 class Solution:
-    def dfs(self, root, s):
+    def dfs(self, root: TreeNode, s: int) -> int:
         if not root: return 0
-        elif not root.left and not root.right: return s * 10 + root.val
-        else: return self.dfs(root.left, s * 10 + root.val) + self.dfs(root.right, s * 10 + root.val)
+        elif not root.left and not root.right: return root.val + s * 10
+        else: return self.dfs(root.left, root.val + s * 10) + self.dfs(root.right, root.val + s * 10)
         
-    def sumNumbers(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """      
+    def sumNumbers(self, root: TreeNode) -> int:
         return self.dfs(root, 0)
