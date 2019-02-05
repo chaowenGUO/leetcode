@@ -1,9 +1,5 @@
 class Solution:
-    def isValid(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
+    def isValid(self, s: str) -> bool:
         dictionary = {'{':'}', '[':']', '(':')'}
         stack = []
         for bracket in s:
