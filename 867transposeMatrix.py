@@ -1,7 +1,4 @@
+import typing
 class Solution:
-    def transpose(self, A):
-        """
-        :type A: List[List[int]]
-        :rtype: List[List[int]]
-        """
-        return [*map(list,zip(*A))]
+    def transpose(self, A: typing.List[typing.List[int]]) -> typing.List[typing.List[int]]:
+        return [*map(list, zip(*A))]
