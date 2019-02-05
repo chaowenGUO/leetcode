@@ -1,12 +1,7 @@
 class Solution:
-    def mirrorReflection(self, p, q):
-        """
-        :type p: int
-        :type q: int
-        :rtype: int
-        """
+    def mirrorReflection(self, p: int, q: int) -> int:
         import math
         gcd = math.gcd(p, q)
-        p = p // gcd
-        q = q // gcd
+        p //= gcd
+        q //= gcd
         return 1 - (p & 1) + (q & 1)
