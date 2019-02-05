@@ -1,9 +1,6 @@
+import typing
 class Solution:
-    def generateMatrix(self, n):
-        """
-        :type n: int
-        :rtype: List[List[int]]
-        """
-        matrix = [[n**2]]
-        while matrix[0][0] > 1: matrix = [[*range(matrix[0][0] - len(matrix), matrix[0][0])], *map(list,zip(*reversed(matrix)))]
-        return matrix
+    def generateMatrix(self, n: int) -> typing.List[typing.List[int]]:
+        result = [[n**2]]
+        while result[0][0] > 1: result = [[*range(result[0][0] - len(result), result[0][0])], *map(list, zip(*reversed(result)))]
+        return result
