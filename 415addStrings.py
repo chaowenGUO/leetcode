@@ -1,13 +1,8 @@
 class Solution:
-    def addStrings(self, num1, num2):
-        """
-        :type num1: str
-        :type num2: str
-        :rtype: str
-        """
+    def addStrings(self, num1: str, num2: str) -> str:
         import itertools
-        carry = 0
         result = ''
+        carry = 0
         for _ in itertools.zip_longest(reversed(num1), reversed(num2), fillvalue = '0'):
             carry += sum(map(int, _))
             result = str(carry % 10) + result
