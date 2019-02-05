@@ -12,20 +12,17 @@
 #         self.right = None
 
 class Solution:
-    def sortedListToBST(self, head):
-        """
-        :type head: ListNode
-        :rtype: TreeNode
-        """
+    def sortedListToBST(self, head: ListNode) -> TreeNode:
         if not head: return None
-        if not head.next: return TreeNode(head.val)
-        slow, fast = head, head.next.next
-        while fast and fast.next:
-            fast = fast.next.next
-            slow = slow.next
-        fast = slow.next
-        slow.next = None
-        root = TreeNode(fast.val)
-        root.left = self.sortedListToBST(head)
-        root.right = self.sortedListToBST(fast.next)
-        return root
+        elif not head.next: return TreeNode(head.val)
+        else:
+            fast, slow = head.next.next, head
+            while fast and fast.next:
+                fast = fast.next.next
+                slow = slow.next
+            fast = slow.next
+            slow.next = None
+            root = TreeNode(fast.val)
+            root.left = self.sortedListToBST(head)
+            root.right = self.sortedListToBST(fast.next)
+            return root
