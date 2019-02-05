@@ -1,7 +1,3 @@
 class Solution:
-    def isPowerOfFour(self, num):
-        """
-        :type num: int
-        :rtype: bool
-        """
+    def isPowerOfFour(self, num: int) -> bool:
         return num > 0 and not num & num - 1 and (num - 1) % 3 == 0
