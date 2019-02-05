@@ -1,10 +1,6 @@
+import typing
 class Solution:
-    def searchInsert(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """
+    def searchInsert(self, nums: typing.List[int], target: int) -> int:
         left, right = 0, len(nums) - 1
         while left + 1 < right:
             middle = left + (right - left) // 2
