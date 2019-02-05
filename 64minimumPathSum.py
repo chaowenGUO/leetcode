@@ -1,10 +1,6 @@
+import typing
 class Solution:
-    def minPathSum(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
-        import itertools
+    def minPathSum(self, grid: typing.List[typing.List[int]]) -> int:
         grid[0] = [*itertools.accumulate(grid[0])]
         for row in range(1, len(grid)): grid[row][0] += grid[row - 1][0]
         for row in range(1, len(grid)):
