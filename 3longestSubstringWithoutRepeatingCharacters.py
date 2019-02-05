@@ -1,9 +1,5 @@
 class Solution:
-    def lengthOfLongestSubstring(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+    def lengthOfLongestSubstring(self, s: str) -> int:
         result = left = 0
         dictionary = {}
         for index, char in enumerate(s):
