@@ -6,11 +6,7 @@
 #         self.right = None
 
 class Solution:
-    def minDepth(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
+    def minDepth(self, root: TreeNode) -> int:
         if not root: return 0
         else:
             depth = [*map(self.minDepth, (root.left, root.right))]
