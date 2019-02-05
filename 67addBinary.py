@@ -1,13 +1,8 @@
 class Solution:
-    def addBinary(self, a, b):
-        """
-        :type a: str
-        :type b: str
-        :rtype: str
-        """
+    def addBinary(self, a: str, b: str) -> str:
         import itertools
-        carry = 0
         result = ''
+        carry = 0
         for _ in itertools.zip_longest(reversed(a), reversed(b), fillvalue = '0'):
             carry += sum(map(int, _))
             result = str(carry & 1) + result
