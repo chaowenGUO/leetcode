@@ -1,10 +1,5 @@
 class Solution:
-    def myPow(self, x, n):
-        """
-        :type x: float
-        :type n: int
-        :rtype: float
-        """
+    def myPow(self, x: float, n: int) -> float:
         if n < 0: x, n = 1 / x, -n
         result = 1
         while n:
