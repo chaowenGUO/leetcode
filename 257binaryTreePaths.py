@@ -5,12 +5,9 @@
 #         self.left = None
 #         self.right = None
 
+import typing
 class Solution:
-    def binaryTreePaths(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[str]
-        """
+    def binaryTreePaths(self, root: TreeNode) -> typing.List[str]:
         if not root: return []
         elif not root.left and not root.right: return [str(root.val)]
         else: return [str(root.val) + '->' + _ for child in (root.left, root.right) for _ in self.binaryTreePaths(child)]
