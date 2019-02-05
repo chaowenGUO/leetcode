@@ -19,4 +19,3 @@ class Solution:
             carry //= 10
             current = current.next
         return result.next
-        return result.next
