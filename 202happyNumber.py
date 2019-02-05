@@ -1,9 +1,5 @@
 class Solution:
-    def isHappy(self, n):
-        """
-        :type n: int
-        :rtype: bool
-        """
+    def isHappy(self, n: int) -> bool:
         while n != 1 and n != 4:
             result = 0
             while n:
