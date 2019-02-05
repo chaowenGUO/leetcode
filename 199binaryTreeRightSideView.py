@@ -5,12 +5,9 @@
 #         self.left = None
 #         self.right = None
 
+import typing
 class Solution:
-    def rightSideView(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[int]
-        """
+    def rightSideView(self, root: TreeNode) -> typing.List[int]:
         result, level = [], [root]
         while root and level:
             result += level[-1].val,
