@@ -1,7 +1,4 @@
+import typing
 class Solution:
-    def stoneGame(self, piles):
-        """
-        :type piles: List[int]
-        :rtype: bool
-        """
+    def stoneGame(self, piles: typing.List[int]) -> bool:
         return True
