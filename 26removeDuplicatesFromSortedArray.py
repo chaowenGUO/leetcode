@@ -1,9 +1,6 @@
+import typing
 class Solution:
-    def removeDuplicates(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+    def removeDuplicates(self, nums: typing.List[int]) -> int:
         index = 1 if nums else 0
         for num in nums:
             if num > nums[index - 1]:
