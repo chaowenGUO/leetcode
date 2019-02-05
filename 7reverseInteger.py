@@ -1,9 +1,5 @@
 class Solution:
-    def reverse(self, x):
-        """
-        :type x: int
-        :rtype: int
-        """
+    def reverse(self, x: int) -> int:
         sign = (x > 0) - (x < 0)
         x = abs(x)
         result = 0
