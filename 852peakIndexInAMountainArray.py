@@ -1,9 +1,6 @@
+import typing
 class Solution:
-    def peakIndexInMountainArray(self, A):
-        """
-        :type A: List[int]
-        :rtype: int
-        """
+    def peakIndexInMountainArray(self, A: typing.List[int]) -> int:
         left, right = 0, len(A) - 1
         while left + 1 < right:
             middle = left + (right - left) // 2
