@@ -5,12 +5,9 @@
 #         self.left = None
 #         self.right = None
 
+import typing
 class Solution:
-    def levelOrder(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[List[int]]
-        """
+    def levelOrder(self, root: TreeNode) -> typing.List[typing.List[int]]:
         result, level = [], [root]
         while root and level:
             result += [node.val for node in level],
