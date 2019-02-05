@@ -1,8 +1,3 @@
 class Solution:
-    def isIsomorphic(self, s, t):
-        """
-        :type s: str
-        :type t: str
-        :rtype: bool
-        """
-        return len({*zip(s, t)}) == len({*s}) == len({*t})
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        return len({*s}) == len({*t}) == len({*zip(s, t)})
