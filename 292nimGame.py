@@ -1,7 +1,3 @@
 class Solution:
-    def canWinNim(self, n):
-        """
-        :type n: int
-        :rtype: bool
-        """
-        return bool(n % 4)
+    def canWinNim(self, n: int) -> bool:
+        return bool(n & 3)
