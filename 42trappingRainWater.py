@@ -1,9 +1,6 @@
+import typing
 class Solution:
-    def trap(self, height):
-        """
-        :type height: List[int]
-        :rtype: int
-        """
+    def trap(self, height: typing.List[int]) -> int:
         left, right = 0, len(height) - 1
         result = leftMax = rightMax = 0
         while left < right:
