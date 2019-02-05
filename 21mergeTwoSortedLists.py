@@ -5,12 +5,7 @@
 #         self.next = None
 
 class Solution:
-    def mergeTwoLists(self, l1, l2):
-        """
-        :type l1: ListNode
-        :type l2: ListNode
-        :rtype: ListNode
-        """
+    def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
         result = current = ListNode(None)
         while l1 and l2:
             if l1.val < l2.val:
