@@ -5,12 +5,9 @@
 #         self.left = None
 #         self.right = None
 
+import typing
 class Solution:
-    def sortedArrayToBST(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: TreeNode
-        """
+    def sortedArrayToBST(self, nums: typing.List[int]) -> TreeNode:
         if not nums: return None
         else:
             middle = len(nums) // 2
