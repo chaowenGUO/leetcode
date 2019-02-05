@@ -1,9 +1,4 @@
 class Solution:
-    def rangeBitwiseAnd(self, m, n):
-        """
-        :type m: int
-        :type n: int
-        :rtype: int
-        """
+    def rangeBitwiseAnd(self, m: int, n: int) -> int:
         while m < n: n &= n - 1
         return n
