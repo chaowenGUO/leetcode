@@ -5,12 +5,9 @@
 #         self.left = None
 #         self.right = None
 
+import typing
 class Solution:
-    def zigzagLevelOrder(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[List[int]]
-        """
+    def zigzagLevelOrder(self, root: TreeNode) -> typing.List[typing.List[int]]:
         result, level, direction = [], [root], 1
         while root and level:
             result += [node.val for node in level][::direction],
