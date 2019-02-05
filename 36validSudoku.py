@@ -1,9 +1,6 @@
+import typing
 class Solution:
-    def isValidSudoku(self, board):
-        """
-        :type board: List[List[str]]
-        :rtype: bool
-        """
+    def isValidSudoku(self, board: typing.List[typing.List[str]]) -> bool:
         seen = []
         for i, row in enumerate(board):
             for j, column in enumerate(row):
