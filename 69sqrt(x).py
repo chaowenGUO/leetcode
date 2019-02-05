@@ -1,9 +1,5 @@
 class Solution:
-    def mySqrt(self, x):
-        """
-        :type x: int
-        :rtype: int
-        """
+    def mySqrt(self, x: int) -> int:
         left, right = 0, x // 2 + 1
         while left + 1 < right:
             middle = left + (right - left) // 2
