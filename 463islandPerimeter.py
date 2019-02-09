@@ -1,9 +1,6 @@
+import typing
 class Solution:
-    def islandPerimeter(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+    def islandPerimeter(self, grid: typing.List[typing.List[int]]) -> int:
         result = 0
         for row in range(len(grid)):
             for column in range(len(grid[0])):
