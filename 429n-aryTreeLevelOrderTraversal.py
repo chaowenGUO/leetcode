@@ -1,16 +1,13 @@
 """
 # Definition for a Node.
-class Node(object):
+class Node:
     def __init__(self, val, children):
         self.val = val
         self.children = children
 """
+import typing
 class Solution:
-    def levelOrder(self, root):
-        """
-        :type root: Node
-        :rtype: List[List[int]]
-        """
+    def levelOrder(self, root: Node) -> typing.List[typing.List[int]]:
         result, level = [], [root]
         while root and level:
             result += [node.val for node in level],
