@@ -14,8 +14,7 @@ class Solution:
         else:
             a, b = headA, headB
             while a and b and a != b:
-                a = a.next
-                b = b.next
+                a, b = a.next, b.next
                 if a == b: return b
                 elif not a: a = headB
                 elif not b: b = headA
