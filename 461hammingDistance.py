@@ -1,12 +1,7 @@
 class Solution:
-    def hammingDistance(self, x, y):
-        """
-        :type x: int
-        :type y: int
-        :rtype: int
-        """
-        n = x ^ y
+    def hammingDistance(self, x: int, y: int) -> int:
         result = 0
+        n = x ^ y
         while n:
             n &= n - 1
             result += 1
