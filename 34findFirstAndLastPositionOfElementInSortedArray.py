@@ -21,5 +21,4 @@ class Solution:
         else: return -1
         
     def searchRange(self, nums: typing.List[int], target: int) -> typing.List[int]:
-        if not nums: return [-1] * 2
-        else: return [_(nums, target) for _ in (self.lower, self.upper)]
+        return [_(nums, target) for _ in (self.lower, self.upper)] if nums else [-1] * 2
