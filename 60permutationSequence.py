@@ -3,7 +3,7 @@ class Solution:
         import math
         factorial = math.factorial(n)
         *elements, = range(1, n + 1)
-        result, k ='', (k - 1) % factorial
+        result, k = '', (k - 1) % factorial
         while elements:
             factorial //= len(elements)
             _, k = divmod(k, factorial)
