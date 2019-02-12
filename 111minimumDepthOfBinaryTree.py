@@ -9,5 +9,5 @@ class Solution:
     def minDepth(self, root: TreeNode) -> int:
         if not root: return 0
         else:
-            depth = [*map(self.minDepth, (root.left, root.right))]
+            *depth, = map(self.minDepth, (root.left, root.right))
             return 1 + (min(depth) or max(depth))
