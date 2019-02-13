@@ -5,11 +5,7 @@
 #         self.next = None
 
 class Solution:
-    def reverseList(self, head):
-        """
-        :type head: ListNode
-        :rtype: ListNode
-        """
+    def reverseList(self, head: ListNode) -> ListNode:
         result = None
         while head:
             current = head
@@ -19,11 +15,7 @@ class Solution:
         return result
  
 class Solution:
-    def reverseList(self, head):
-        """
-        :type head: ListNode
-        :rtype: ListNode
-        """
+    def reverseList(self, head: ListNode) -> ListNode:
         if not head or not head.next: return head
         else:
             result = self.reverseList(head.next)
