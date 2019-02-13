@@ -1,10 +1,6 @@
 class Solution:
-    def reverseOnlyLetters(self, S):
-        """
-        :type S: str
-        :rtype: str
-        """
-        S = [*S]
+    def reverseOnlyLetters(self, S: str) -> str:
+        *S, = S
         left, right = 0, len(S) - 1
         while left < right:
             if not S[left].isalpha(): left += 1
