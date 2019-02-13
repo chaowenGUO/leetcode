@@ -1,8 +1,5 @@
+import typing
 class Solution:
-    def minFallingPathSum(self, A):
-        """
-        :type A: List[List[int]]
-        :rtype: int
-        """
+    def minFallingPathSum(self, A: typing.List[typing.List[int]]) -> int:
         import functools
-        return min(functools.reduce(lambda dp, row: [value + min(dp[column], dp[max(column - 1, 0)], dp[min(column + 1, len(A) - 1)]) for column, value in enumerate(row)], A))
+        return min(functools.reduce(lambda dp, row: [value + min(dp[max(0, column - 1)], dp[column], dp[min(column + 1, len(A) - 1)]) for column, value in enumerate(row)], A))
