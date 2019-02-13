@@ -6,16 +6,12 @@
 #         self.right = None
 
 class Solution:
-    def check(self, root):
+    def check(self, root: TreeNode) -> int:
         if not root: return 0
         else:
             left, right = map(self.check, (root.left, root.right))
             if left == -1 or right == -1 or abs(left - right) > 1: return -1
             else: return 1 + max(left, right)
             
-    def isBalanced(self, root):
-        """
-        :type root: TreeNode
-        :rtype: bool
-        """
+    def isBalanced(self, root: TreeNode) -> bool:
         return self.check(root) != -1
