@@ -13,4 +13,4 @@ class Solution:
         if left + right != intervals:
             start = min(start, intervals[len(left)].start)
             end = max(end, intervals[~len(right)].end)
-        return left + [Interval(start, end)] + right
+        return [*left, Interval(start, end), *right]
