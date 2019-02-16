@@ -1,18 +1,10 @@
 class NumArray:
-
-    def __init__(self, nums):
-        """
-        :type nums: List[int]
-        """
+    import typing
+    def __init__(self, nums: typing.List[int]):
         import itertools
-        self.data =[*itertools.accumulate(itertools.chain([0], nums))]
+        *self.data, = itertools.accumulate(itertools.chain([0], nums)) 
 
-    def sumRange(self, i, j):
-        """
-        :type i: int
-        :type j: int
-        :rtype: int
-        """
+    def sumRange(self, i: int, j: int) -> int:
         return self.data[j + 1] - self.data[i]
 
 
