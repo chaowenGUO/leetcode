@@ -1,6 +1,5 @@
-import typing
 class Solution:
-    def islandPerimeter(self, grid: typing.List[typing.List[int]]) -> int:
+    def islandPerimeter(self, grid: List[List[int]]) -> int:
         result = 0
         for row in range(len(grid)):
             for column in range(len(grid[0])):
