@@ -6,11 +6,7 @@
 #         self.right = None
 
 class Solution:
-    def largestValues(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[int]
-        """
+    def largestValues(self, root: TreeNode) -> List[int]:
         result, level = [], [root]
         while root and level:
             result += max(node.val for node in level),
