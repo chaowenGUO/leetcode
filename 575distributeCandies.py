@@ -1,4 +1,3 @@
-import typing
 class Solution:
-    def distributeCandies(self, candies: typing.List[int]) -> int:
-        return min(len(candies) // 2, len({*candies}))
+    def distributeCandies(self, candies: List[int]) -> int:
+        return min(len({*candies}), len(candies) // 2)
