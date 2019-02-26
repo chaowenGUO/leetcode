@@ -5,9 +5,8 @@
 #         self.left = None
 #         self.right = None
 
-import typing
 class Solution:
-    def buildTree(self, preorder: typing.List[int], inorder: typing.List[int]) -> TreeNode:
+    def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
         if inorder:
             index = inorder.index(preorder.pop(0))
             root = TreeNode(inorder[index])
