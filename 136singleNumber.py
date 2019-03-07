@@ -1,5 +1,5 @@
-import typing
+import functools
+
 class Solution:
-    def singleNumber(self, nums: typing.List[int]) -> int:
-        import functools, operator
+    def singleNumber(self, nums: List[int]) -> int:
         return functools.reduce(operator.xor, nums)
