@@ -1,5 +1,3 @@
-import typing
 class Solution:
-    def longestCommonPrefix(self, strs: typing.List[str]) -> str:
-        import itertools
+    def longestCommonPrefix(self, strs: List[str]) -> str:
         return ''.join(next(zip(*itertools.takewhile(lambda char: len({*char}) == 1, zip(*strs))), ''))
