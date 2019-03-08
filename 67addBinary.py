@@ -1,6 +1,5 @@
 class Solution:
     def addBinary(self, a: str, b: str) -> str:
-        import itertools
         result = ''
         carry = 0
         for _ in itertools.zip_longest(reversed(a), reversed(b), fillvalue = '0'):
