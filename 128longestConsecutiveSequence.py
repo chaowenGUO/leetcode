@@ -1,9 +1,5 @@
 class Solution:
-    def longestConsecutive(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+    def longestConsecutive(self, nums: List[int]) -> int:
         result, remain = 0, {*nums}
         while remain:
             left = right = remain.pop()
