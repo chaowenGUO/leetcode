@@ -1,5 +1,5 @@
 class Solution:
-    def count(self, column: int, left: int, right: int) -> int:
+    def count(self, column, left, right):
         count = 0
         available = self.nbit & ~(column | left | right)
         while available:
