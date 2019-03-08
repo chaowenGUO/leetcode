@@ -1,15 +1,11 @@
 # Definition for singly-linked list.
-# class ListNode(object):
+# class ListNode:
 #     def __init__(self, x):
 #         self.val = x
 #         self.next = None
 
-class Solution(object):
-    def detectCycle(self, head):
-        """
-        :type head: ListNode
-        :rtype: ListNode
-        """
+class Solution:
+    def detectCycle(self, head: ListNode) -> ListNode:
         fast = slow = head
         while fast and fast.next:
             fast = fast.next.next
