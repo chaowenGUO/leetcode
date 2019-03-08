@@ -4,9 +4,8 @@
 #         self.start = s
 #         self.end = e
 
-import typing
 class Solution:
-    def insert(self, intervals: typing.List[Interval], newInterval: Interval) -> typing.List[Interval]:
+    def insert(self, intervals: List[Interval], newInterval: Interval) -> List[Interval]:
         start, end = newInterval.start, newInterval.end
         left = [_ for _ in intervals if _.end < start]
         right = [_ for _ in intervals if _.start > end]
