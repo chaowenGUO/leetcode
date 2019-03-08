@@ -1,7 +1,3 @@
 class Solution:
-    def maxProfit(self, prices):
-        """
-        :type prices: List[int]
-        :rtype: int
-        """
-        return sum(max(prices[_ + 1] - prices[_], 0) for _ in range(len(prices) - 1))
+    def maxProfit(self, prices: List[int]) -> int:
+        return sum(max(0, prices[_ + 1] - prices[_]) for _ in range(len(prices) - 1))
