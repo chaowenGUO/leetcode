@@ -5,9 +5,8 @@
 #         self.left = None
 #         self.right = None
 
-import typing
 class Solution:
-    def levelOrderBottom(self, root: TreeNode) -> typing.List[typing.List[int]]:
+    def levelOrderBottom(self, root: TreeNode) -> List[List[int]]:
         result, level = [], [root]
         while root and level:
             result += [node.val for node in level],
