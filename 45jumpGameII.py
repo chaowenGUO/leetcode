@@ -1,9 +1,5 @@
 class Solution:
-    def jump(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+    def jump(self, nums: List[int]) -> int:
         result = reach = maxReach = 0
         for index, num in enumerate(nums):
             if index > reach:
