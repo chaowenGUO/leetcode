@@ -1,6 +1,5 @@
-import typing
 class Solution:
-    def removeElement(self, nums: typing.List[int], val: int) -> int:
+    def removeElement(self, nums: List[int], val: int) -> int:
         index = 0
         for num in nums:
             if num != val:
