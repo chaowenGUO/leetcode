@@ -1,9 +1,5 @@
 class Solution:
-    def partition(self, s):
-        """
-        :type s: str
-        :rtype: List[List[str]]
-        """
+    def partition(self, s: str) -> List[List[str]]:
         return [[s[:_]] + rest
                for _ in range(1, len(s) + 1)
                if s[:_] == s[_ - 1::-1]
