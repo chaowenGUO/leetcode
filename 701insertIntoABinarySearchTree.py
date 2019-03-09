@@ -6,12 +6,7 @@
 #         self.right = None
 
 class Solution:
-    def insertIntoBST(self, root, val):
-        """
-        :type root: TreeNode
-        :type val: int
-        :rtype: TreeNode
-        """
+    def insertIntoBST(self, root: TreeNode, val: int) -> TreeNode:
         if not root: return TreeNode(val)
         elif root.val < val: root.right = self.insertIntoBST(root.right, val)
         else: root.left = self.insertIntoBST(root.left, val)
