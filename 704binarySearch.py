@@ -1,10 +1,5 @@
 class Solution:
-    def search(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """
+    def search(self, nums: List[int], target: int) -> int:
         left, right = 0, len(nums) - 1
         while left + 1 < right:
             middle = left + (right - left) // 2
