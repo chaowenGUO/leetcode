@@ -1,4 +1,3 @@
-import typing
 class Solution:
-    def minMoves(self, nums: typing.List[int]) -> int:
+    def minMoves(self, nums: List[int]) -> int:
         return sum(nums) - len(nums) * min(nums)
