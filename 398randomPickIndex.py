@@ -1,17 +1,9 @@
 class Solution:
 
-    def __init__(self, nums):
-        """
-        :type nums: List[int]
-        """
+    def __init__(self, nums: List[int]):
         self.nums = nums
 
-    def pick(self, target):
-        """
-        :type target: int
-        :rtype: int
-        """
-        import random
+    def pick(self, target: int) -> int:
         return random.choice([_[0] for _ in enumerate(self.nums) if _[1] == target])
 
 
