@@ -1,5 +1,5 @@
-import typing
+import functools
+
 class Solution:
-    def hasGroupsSizeX(self, deck: typing.List[int]) -> bool:
-        import functools, math, collections
+    def hasGroupsSizeX(self, deck: List[int]) -> bool:
         return functools.reduce(math.gcd, collections.Counter(deck).values()) > 1
