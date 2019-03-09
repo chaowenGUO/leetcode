@@ -4,11 +4,7 @@
 # def guess(num):
 
 class Solution:
-    def guessNumber(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
+    def guessNumber(self, n: int) -> int:
         left, right = 1, n
         while left + 1 < right:
             middle = left + (right - left) // 2
