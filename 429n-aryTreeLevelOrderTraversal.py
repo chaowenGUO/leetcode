@@ -5,9 +5,8 @@ class Node:
         self.val = val
         self.children = children
 """
-import typing
 class Solution:
-    def levelOrder(self, root: Node) -> typing.List[typing.List[int]]:
+    def levelOrder(self, root: 'Node') -> List[List[int]]:
         result, level = [], [root]
         while root and level:
             result += [node.val for node in level],
