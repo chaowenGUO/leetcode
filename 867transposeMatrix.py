@@ -1,4 +1,3 @@
-import typing
 class Solution:
-    def transpose(self, A: typing.List[typing.List[int]]) -> typing.List[typing.List[int]]:
+    def transpose(self, A: List[List[int]]) -> List[List[int]]:
         return [*map(list, zip(*A))]
