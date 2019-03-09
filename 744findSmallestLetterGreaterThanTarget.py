@@ -1,6 +1,5 @@
-import typing
 class Solution:
-    def nextGreatestLetter(self, letters: typing.List[str], target: str) -> str:
+    def nextGreatestLetter(self, letters: List[str], target: str) -> str:
         left, right = 0, len(letters) - 1
         while left + 1 < right:
             middle = left + (right - left) // 2
