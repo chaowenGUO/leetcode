@@ -1,6 +1,5 @@
 class Solution:
     def mirrorReflection(self, p: int, q: int) -> int:
-        import math
         gcd = math.gcd(p, q)
         p //= gcd
         q //= gcd
