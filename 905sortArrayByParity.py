@@ -1,9 +1,5 @@
 class Solution:
-    def sortArrayByParity(self, A):
-        """
-        :type A: List[int]
-        :rtype: List[int]
-        """
+    def sortArrayByParity(self, A: List[int]) -> List[int]:
         left, right = 0, len(A) - 1
         while left < right:
             if A[left] & 1 == 0: left += 1
