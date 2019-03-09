@@ -1,6 +1,5 @@
 class Solution:
     def addStrings(self, num1: str, num2: str) -> str:
-        import itertools
         result = ''
         carry = 0
         for _ in itertools.zip_longest(reversed(num1), reversed(num2), fillvalue = '0'):
