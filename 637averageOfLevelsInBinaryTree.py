@@ -5,13 +5,10 @@
 #         self.left = None
 #         self.right = None
 
+import statistics
+
 class Solution:
-    def averageOfLevels(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[float]
-        """
-        import statistics
+    def averageOfLevels(self, root: TreeNode) -> List[float]:
         result, level = [], [root]
         while root and level:
             result += statistics.mean(node.val for node in level),
