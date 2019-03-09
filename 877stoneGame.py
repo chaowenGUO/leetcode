@@ -1,4 +1,3 @@
-import typing
 class Solution:
-    def stoneGame(self, piles: typing.List[int]) -> bool:
+    def stoneGame(self, piles: List[int]) -> bool:
         return True
