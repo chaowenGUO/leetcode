@@ -1,6 +1,5 @@
-import typing
 class Solution:
-    def removeDuplicates(self, nums: typing.List[int]) -> int:
+    def removeDuplicates(self, nums: List[int]) -> int:
         index = 0
         for num in nums:
             if index < 2 or num > nums[index - 2]:
