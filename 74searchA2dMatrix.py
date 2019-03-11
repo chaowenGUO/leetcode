@@ -1,6 +1,5 @@
-import typing
 class Solution:
-    def searchMatrix(self, matrix: typing.List[typing.List[int]], target: int) -> bool:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         if not matrix or not matrix[0]: return False
         else:
             column = len(matrix[0])
