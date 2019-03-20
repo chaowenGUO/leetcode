@@ -1,6 +1,5 @@
-import typing
 class Solution:
-    def findDuplicate(self, nums: typing.List[int]) -> int:
+    def findDuplicate(self, nums: List[int]) -> int:
         fast = slow = 0
         while True:
             fast = nums[nums[fast]]
