@@ -17,17 +17,14 @@ class Solution:
             current = current.next
         current.next = l1 or l2
         return result.next
-
-    def sortList(self, head):
-        """
-        :type head: ListNode
-        :rtype: ListNode
-        """
-        if not head or not head.next: return head    
-        slow, fast = head, head.next
-        while fast and fast.next:
-            fast = fast.next.next
-            slow = slow.next
-        fast = slow.next
-        slow.next = None
-        return self.merge(*map(self.sortList, (head, fast)))
+    
+    def sortList(self, head: ListNode) -> ListNode:
+        if not head or not head.next: return head
+        else:
+            fast, slow = head.next, head
+            while fast and fast.next:
+                fast = fast.next.next
+                slow = slow.next
+            fast = slow.next
+            slow.next = None
+            return self.merge(*map(self.sortList, (head, fast)))
