@@ -1,7 +1,5 @@
-import typing
 class Solution:
-    def ladderLength(self, beginWord: str, endWord: str, wordList: typing.List[str]) -> int:
-        import collections
+    def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
         wordList = {*wordList}
         charSet = {char for word in wordList for char in word}
         queue = collections.deque([[beginWord, 1]])
@@ -15,4 +13,4 @@ class Solution:
                         if nextWord in wordList:
                             wordList.remove(nextWord)
                             queue += [nextWord, length + 1],
-        return 0
+        return 0                        
