@@ -1,6 +1,5 @@
-import typing
 class Solution:
-    def reverseString(self, s: typing.List[str]) -> None:
+    def reverseString(self, s: List[str]) -> None:
         """
         Do not return anything, modify s in-place instead.
         """
@@ -9,3 +8,4 @@ class Solution:
             s[left], s[right] = s[right], s[left]
             left += 1
             right -= 1
+            
