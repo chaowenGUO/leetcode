@@ -1,9 +1,5 @@
 class Solution:
-    def majorityElement(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+    def majorityElement(self, nums: List[int]) -> int:
         majority = count = 0
         for num in nums:
             if majority == num: count += 1
