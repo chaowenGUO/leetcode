@@ -1,7 +1,7 @@
-import typing
+import functools
+
 class Solution:
-    def singleNumber(self, nums: typing.List[int]) -> typing.List[int]:
-        import functools, operator
+    def singleNumber(self, nums: List[int]) -> List[int]:
         xor = functools.reduce(operator.xor, nums)
         position = xor & -xor
         result = [0] * 2
