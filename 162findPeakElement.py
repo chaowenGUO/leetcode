@@ -1,9 +1,5 @@
 class Solution:
-    def findPeakElement(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+    def findPeakElement(self, nums: List[int]) -> int:
         left, right = 0, len(nums) - 1
         while left + 1 < right:
             middle = left + (right - left) // 2
