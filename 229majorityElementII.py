@@ -1,6 +1,5 @@
-import typing
 class Solution:
-    def majorityElement(self, nums: typing.List[int]) -> typing.List[int]:
+    def majorityElement(self, nums: List[int]) -> List[int]:
         majority0, majority1, count0, count1 = 0, 1, 0, 0
         for num in nums:
             if majority0 == num: count0 += 1
