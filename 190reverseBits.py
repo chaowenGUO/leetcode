@@ -1,5 +1,7 @@
-import functools
-
 class Solution:
     def reverseBits(self, n: int) -> int:
-        return functools.reduce(lambda result, _: [result[0] << 1 | result[1] & 1, result[1] >> 1], range(32), [0, n])[0]
+        result = 0
+        for _ in range(32):
+            result = result << 1 | n & 1
+            n >>= 1
+        return result
