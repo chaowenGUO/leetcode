@@ -1,14 +1,3 @@
 class Solution:
-    def judgeSquareSum(self, c):
-        """
-        :type c: int
-        :rtype: bool
-        """
-        import math
-        left, right = 0, int(math.sqrt(c))
-        while left <= right:
-            _ = left**2 + right**2
-            if _ == c: return True
-            elif _ < c: left += 1
-            else: right -= 1
-        return False
+    def judgeSquareSum(self, c: int) -> bool:
+        return any(int(math.sqrt(c - _**2))**2 == c - _**2 for _ in range(int(math.sqrt(c)) + 1))
