@@ -1,9 +1,5 @@
 class Solution:
-    def findMin(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+    def findMin(self, nums: List[int]) -> int:
         left, right = 0, len(nums) - 1
         while left + 1 < right:
             if nums[left] < nums[right]: return nums[left]
