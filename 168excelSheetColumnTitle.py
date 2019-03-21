@@ -1,9 +1,5 @@
 class Solution:
-    def convertToTitle(self, n):
-        """
-        :type n: int
-        :rtype: str
-        """
+    def convertToTitle(self, n: int) -> str:
         result = ''
         while n:
             n -= 1
