@@ -1,4 +1,3 @@
-import typing
 class Solution:
-    def containsDuplicate(self, nums: typing.List[int]) -> bool:
+    def containsDuplicate(self, nums: List[int]) -> bool:
         return len(nums) != len({*nums})
