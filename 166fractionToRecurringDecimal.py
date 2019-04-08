@@ -10,4 +10,4 @@ class Solution:
             seen[remainder] = len(tail)
             digit, remainder = divmod(10 * remainder, abs(denominator))
             tail += str(digit)
-        return sign + str(head) + (tail and '.' + tail)
+        return ''.join((sign, str(head), (tail and '.' + tail)))
