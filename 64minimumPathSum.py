@@ -1,7 +1,10 @@
 class Solution:
     def minPathSum(self, grid: List[List[int]]) -> int:
-        *grid[0], = itertools.accumulate(grid[0])
-        for row in range(1, len(grid)): grid[row][0] += grid[row - 1][0]
+        column = len(grid[0])
+        dp = [grid[0][0], *itertools.repeat(0, column - 1)]
+        for _ in range(1, column): dp[_] = dp[_ - 1] + grid[0][_]
         for row in range(1, len(grid)):
-            for column in range(1, len(grid[0])): grid[row][column] += min(grid[row - 1][column], grid[row][column - 1])
-        return grid[-1][-1]
+            dp[0] += grid[row][0]
+            for _ in range(1, column):
+                dp[_] = min(dp[_], dp[_ - 1]) + grid[row][_]
+        return dp[-1]
