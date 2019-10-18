@@ -1,10 +1,12 @@
 class Solution:
     def searchInsert(self, nums: List[int], target: int) -> int:
-        left, right = 0, len(nums) - 1
-        while left + 1 < right:
+        return bisect.bisect_left(nums, target)
+
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        left, right = 0, len(nums)
+        while left < right:
             middle = left + (right - left) // 2
-            if nums[middle] < target: left = middle
+            if nums[middle] < target: left = middle + 1
             else: right = middle
-        if nums[left] >= target: return left
-        elif nums[right] >= target: return right
-        else: return len(nums)
+        return left
