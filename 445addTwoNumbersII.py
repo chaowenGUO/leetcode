@@ -13,7 +13,7 @@ ListNode.__iter__ = generator
 
 class Solution:            
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
-        l1, l2 = map(list, (l1, l2))
+        l1, l2 = map(list, ([] if _ is None else _ for _ in (l1, l2)))
         result = None
         carry = 0
         while l1 or l2 or carry:
