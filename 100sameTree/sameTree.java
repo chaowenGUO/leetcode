@@ -9,7 +9,6 @@
  */
 class Solution {
     public boolean isSameTree(TreeNode p, TreeNode q) {
-        if (p != null && q != null) return p.val == q.val && this.isSameTree(p.left, q.left) && this.isSameTree(p.right, q.right);
-        else return p == q;
+        return p != null && q != null ? return p.val == q.val && this.isSameTree(p.left, q.left) && this.isSameTree(p.right, q.right) : p == q;
     }
 }
