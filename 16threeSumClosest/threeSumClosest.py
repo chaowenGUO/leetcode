@@ -15,5 +15,5 @@ class Solution:
                 if total >= target:
                     while left < right and nums[right] == numsRight: right -= 1                             
                 if abs(target-total) < abs(result - target): result = total           
-            while index != len(nums) -2 and nums[index] == num: index += 1
+            while index != len(nums) - 2 and nums[index] == num: index += 1
         return result
