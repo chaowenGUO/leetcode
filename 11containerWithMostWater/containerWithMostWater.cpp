@@ -1,12 +1,12 @@
 class Solution {
 public:
     int maxArea(vector<int>& height) {
-        auto [left, right]{std::pair{std::size_t{0}, std::size(height) - 1}};
-        std::size_t result{0};
+        auto left{std::cbegin(height)}, right{std::prev(std::cend(height))};
+        auto result{0};
         while (left < right)
         {
-            result = std::max(result, (right - left) * std::min(height[left], height[right]));
-            height[left] < height[right] ? ++left : --right;
+            result = std::fmax(result, std::distance(left, right) * std::min(*left, *right));
+            *left < *right ? std::advance(left, 1) : std::advance(right, -1);
         }
         return result;
     }
