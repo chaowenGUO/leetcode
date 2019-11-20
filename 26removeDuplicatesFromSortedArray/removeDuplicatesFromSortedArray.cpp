@@ -1,7 +1,7 @@
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-        auto index{nums.empty() ? 0 : 1};
+        auto index{std::empty(nums) ? 0 : 1};
         for (auto const num: nums)
         {
             if (num > nums[index - 1])
