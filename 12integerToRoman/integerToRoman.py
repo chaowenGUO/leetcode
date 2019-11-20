@@ -20,6 +20,6 @@ class Solution:
     def intToRoman(self, num: int) -> str:
         result = []
         for _ in Roman:
-            result += _.name * (num // _.value),
+            result += itertools.repeat(_.name, num // _.value)
             num %= _.value
         return ''.join(result)
