@@ -4,5 +4,5 @@ class Solution:
         result = 0
         while left < right:
             result = max(result, (right - left) * min(map(height.__getitem__, (left, right))))
-            (left := left + 1) if operator.sub(*map(height.__getitem__, (left, right))) < 0 else (right := right - 1)
+            (left := left + 1) if operator.lt(*map(height.__getitem__, (left, right))) else (right := right - 1)
         return result
