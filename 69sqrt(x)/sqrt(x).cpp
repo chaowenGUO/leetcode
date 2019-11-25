@@ -8,6 +8,6 @@ public:
             if (std::pow(middle, 2) < x) left = middle + 1;
             else right = middle;
         }
-        return std::pow(left, 2) == x? left : left - 1;
+        return std::pow(left, 2) == x ? left : left - 1;
     }
 };
