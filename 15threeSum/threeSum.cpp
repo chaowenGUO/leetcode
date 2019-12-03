@@ -8,7 +8,7 @@ public:
         {
             const auto num{*index};
             if (*index > 0) break;
-            auto left{std::next(index)}, right{std::prev(std::cend(nums))};
+            auto left{std::next(index)}, right{--std::cend(nums)};
             while (left != right)
             {
                 const auto numsLeft{*left}, numsRight{*right};
