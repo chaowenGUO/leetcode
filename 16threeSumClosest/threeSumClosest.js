@@ -10,13 +10,13 @@ var threeSumClosest = function(nums, target) {
     {
         const num = nums[index]
         let [left, right] = [index + 1, nums.length - 1]
-        while (left < right)
+        while (!Object.is(left, right))
         {
             const [numsLeft, numsRight] = [left, right].map(_ => nums[_])
             const total = num + numsLeft + numsRight
             if (Object.is(total, target)) return target
-            if (total <= target) while (left < right && numsLeft == nums[left]) ++left
-            if (total >= target) while (left < right && numsRight == nums[right]) --right
+            if (total <= target) while (!Object.is(left, right) && Object.is(numsLeft, nums[left])) ++left
+            if (total >= target) while (!Object.is(left, right) && Object.is(numsRight, nums[right])) --right
             if (Math.abs(total - target) < Math.abs(result - target)) result = total
         }
         while (Object.is(nums[index], num) && index != nums.length - 2) ++index
