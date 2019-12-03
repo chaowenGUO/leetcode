@@ -1,9 +1,9 @@
 class Solution:
     def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
         nums.sort()
-        dictionary = collections.defaultdict(list)
+        dictionary = collections.defaultdict(set)
         for left in range(len(nums) - 1):
-            for right in range(left + 1, len(nums)): dictionary[sum(map(nums.__getitem__, (left, right)))] += [left, right],
+            for right in range(left + 1, len(nums)): dictionary[sum(map(nums.__getitem__, (left, right)))].add((left, right))
         result = set()
         for left in range(2, len(nums) - 1):
             for right in range(left + 1, len(nums)):
