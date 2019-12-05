@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
-        std::vector<std::vector<int>> result;
+        std::invoke_result_t<decltype(&Solution::merge), Solution, decltype(intervals)> result;
         std::sort(std::begin(intervals), std::end(intervals), [](auto const a, auto const b){return a.front() < b.front();});
         for (auto const& interval: intervals)
         {
