@@ -10,13 +10,11 @@ class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
         final PriorityQueue<Integer> queue = new PriorityQueue();
         for(ListNode node: lists)
-        {
             while (node != null)
             {
                 queue.offer(node.val);
                 node = node.next;
             }
-        }
         final ListNode result = new ListNode(0);
         ListNode current = result;
         while (!queue.isEmpty())
