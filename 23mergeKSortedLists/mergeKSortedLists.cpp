@@ -10,17 +10,15 @@ class Solution {
 public:
     ListNode* mergeKLists(vector<ListNode*>& lists) {
         std::priority_queue<int, std::vector<int>, std::greater<int>> queue;
-        for (auto list: lists)
-        {
-            while (list)
+        for (auto _: lists)
+            while (_)
             {
-                queue.emplace(list->val);
-                list = list->next;
+                queue.emplace(_->val);
+                _ = _->next;
             }
-        }
         auto const result{std::make_unique<ListNode>(0)};
         auto current{result.get()};
-        while (!queue.empty())
+        while (!std::empty(queue))
         {
             current->next = new ListNode(queue.top());
             queue.pop();
