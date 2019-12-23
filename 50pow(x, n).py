@@ -1,9 +1,9 @@
 class Solution:
     def myPow(self, x: float, n: int) -> float:
-        if n < 0: x, n = 1 / x, -n
         result = 1
+        sign = math.copysign(1, n)
         while n:
             if n & 1: result *= x
             x *= x
-            n >>= 1
-        return result
+            n = int(n / 2)
+        return result if sign == 1 else 1 / result
