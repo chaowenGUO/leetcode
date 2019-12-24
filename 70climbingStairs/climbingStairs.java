@@ -1,5 +1,5 @@
 class Solution {
     public int climbStairs(int n) {
-        return java.util.stream.IntStream.range(0, n).boxed().reduce(Arrays.asList(1, 1), (acc, $) -> Arrays.asList(acc.get(1), acc.stream().mapToInt(Integer::valueOf).sum()), (x, y) -> x).get(0);
+        return Stream.iterate(Arrays.asList(1, 1), result -> Arrays.asList(result.get(1), result.stream().mapToInt(Integer::intValue).sum())).mapToInt($ -> $.get(1)).limit(n).reduce((a,b) -> b).orElse(0);
     }
 }
