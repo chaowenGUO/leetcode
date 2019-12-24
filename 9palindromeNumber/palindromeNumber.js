@@ -3,7 +3,7 @@
  * @return {boolean}
  */
 var isPalindrome = function(x) {
-    if (x < 0 || Object.is(x % 10, 0) && !Object.is(x, 0)) return false
+    if (x < 0 || !(x % 10) && x) return false
     else
     {
         let result = 0
