@@ -18,13 +18,11 @@ var zigzagLevelOrder = function(root) {
     while (root && level.length)
     {
         result.push(level.map(node => node.val))
-        level = lodash.flatMap(level, node => [node.left, node.right]).filter(_ => _)
+        level = lodash.flatMap(level, node => [node.left, node.right].filter(_ => _))
     }
     let direction = true
-    for (let level of result)
-    {
+    result.forEach(level => {
         if (!direction) level.reverse()
-        direction = !direction
-    }
+        direction = !direction}
     return result
 };
