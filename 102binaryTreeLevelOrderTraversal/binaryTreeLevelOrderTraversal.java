@@ -14,7 +14,7 @@ class Solution {
         while (root != null && !level.isEmpty())
         {
             result.add(level.stream().map(node -> node.val).collect(Collectors.toList()));
-            level = level.stream().flatMap(node -> Stream.of(node.left, node.right)).filter($ -> $ != null).collect(Collectors.toList());
+            level = level.stream().flatMap(node -> Stream.of(node.left, node.right).filter($ -> $ != null)).collect(Collectors.toList());
         }
         return result;
     }
