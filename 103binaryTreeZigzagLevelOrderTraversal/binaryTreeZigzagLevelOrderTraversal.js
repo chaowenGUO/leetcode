@@ -23,6 +23,6 @@ var zigzagLevelOrder = function(root) {
     let direction = true
     result.forEach(level => {
         if (!direction) level.reverse()
-        direction = !direction}
+        direction = !direction})
     return result
 };
