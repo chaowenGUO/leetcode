@@ -8,7 +8,7 @@ function even(num)
     while (num)
     {
         num = Math.trunc(num / 10)
-        result += 1
+        ++result
     }
     return 1 - result & 1
 }
