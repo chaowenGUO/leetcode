@@ -18,7 +18,7 @@ var levelOrder = function(root) {
     while (root && level.length)
     {
         result.push(level.map(node => node.val))
-        level = lodash.flatMap(level, node => [node.left, node.right]).filter(_ => _)
+        level = lodash.flatMap(level, node => [node.left, node.right].filter(_ => _))
     }
     return result
 };
