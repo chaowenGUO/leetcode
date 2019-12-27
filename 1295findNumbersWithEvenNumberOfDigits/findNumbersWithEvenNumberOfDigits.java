@@ -5,7 +5,7 @@ class Solution {
         while (num != 0)
         {
             num /= 10;
-            result += 1;
+            ++result;
         }
         return 1 - result & 1;
     }
