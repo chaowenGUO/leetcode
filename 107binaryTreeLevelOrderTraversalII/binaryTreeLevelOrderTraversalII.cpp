@@ -14,7 +14,7 @@ public:
         std::vector level{root};
         while (root && !std::empty(level))
         {
-            std::vector<int> value(std::size(level));
+            std::vector<decltype(std::declval<TreeNode>().val)> value(std::size(level));
             std::transform(std::cbegin(level), std::cend(level), std::begin(value), [](auto const node){return node->val;});
             result.emplace_back(value);
             std::vector<decltype(root)> nodes;
