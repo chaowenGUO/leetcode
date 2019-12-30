@@ -9,7 +9,7 @@
  */
 class Solution {
     public int deepestLeavesSum(TreeNode root) {
-        List<Integer> result = Collections.emptyList();
+        List<Integer> result = null;
         List<TreeNode> level = Arrays.asList(root);
         while (root != null && !level.isEmpty())
         {
