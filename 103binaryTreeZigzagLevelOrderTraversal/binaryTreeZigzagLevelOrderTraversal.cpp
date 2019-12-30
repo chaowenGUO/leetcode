@@ -17,12 +17,10 @@ public:
             std::vector<int> value(std::size(level));
             std::transform(std::cbegin(level), std::cend(level), std::begin(value), [](auto const node){return node->val;});
             result.emplace_back(value);
-            std::vector<TreeNode*> nodes;
-            for (auto const node: level)
-            {
+            std::vector<decltype(root)> nodes;
+            std::for_each(std::cbegin(level), std::cend(level), [&](auto const node){
                 if (node->left) nodes.emplace_back(node->left);
-                if (node->right) nodes.emplace_back(node->right);
-            }
+                if (node->right) nodes.emplace_back(node->right);});
             level = std::move(nodes);
         }
         std::for_each(std::begin(result), std::end(result), [direction{true}](auto&level)mutable{
