@@ -12,7 +12,7 @@
  */
 var removeNthFromEnd = function(head, n) {
     let [fast, slow] = Array(2).fill(head)
-    for (let _ = 0; !Object.is(_, n); ++_) fast = fast.next
+    for (const _ of Array(n).keys()) fast = fast.next
     if (!fast) return head.next
     else
     {
