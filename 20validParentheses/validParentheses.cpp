@@ -5,11 +5,8 @@ public:
         std::stack<char> stack;
         for (auto const _: s)
             if (auto find{parentheses.find(_)}; find != std::cend(parentheses)) stack.emplace(find->second);
-            else
-            {    
-                if (std::empty(stack) || stack.top() != _) return false;
-                else stack.pop();
-            }
+            else if (std::empty(stack) || stack.top() != _) return false;
+            else stack.pop();
         return std::empty(stack);
     }
 };
