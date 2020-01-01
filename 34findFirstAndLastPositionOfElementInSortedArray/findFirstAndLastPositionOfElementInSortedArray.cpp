@@ -1,7 +1,8 @@
 class Solution {
 public:
     vector<int> searchRange(vector<int>& nums, int target) {
-        auto const range{std::equal_range(std::cbegin(nums), std::cend(nums), target)};
-        return range.first != range.second ? std::vector<int>{std::distance(std::cbegin(nums), range.first), std::distance(std::cbegin(nums), range.second) - 1} : std::vector<int>(2, -1); 
+        auto const [left, right]{std::equal_range(std::cbegin(nums), std::cend(nums), target)};
+        using type = std::invoke_result_t<decltype(&Solution::searchRange), Solution, decltype(nums), decltype(target)>;
+        return left != right ? type{std::distance(std::cbegin(nums), left), std::distance(std::cbegin(nums), right) - 1} : type(2, -1);
     }
 };
