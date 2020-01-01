@@ -7,7 +7,6 @@ var isValid = function(s) {
     stack = []
     for (const _ of s)
         if (_ in parentheses) stack.push(parentheses[_])
-        else
-            if (!stack.length || !Object.is(stack.pop(), _)) return false 
+        else if (!stack.length || !Object.is(stack.pop(), _)) return false 
     return !stack.length
 };
