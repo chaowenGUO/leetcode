@@ -16,7 +16,7 @@ var swapPairs = function(head) {
     let a = null
     while ((a = current.next) && current.next.next)
     {
-        current.next = curren.next.next
+        current.next = current.next.next
         a.next = a.next.next
         current.next.next = a
         current = a
