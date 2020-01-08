@@ -3,5 +3,5 @@
  * @return {boolean}
  */
 var isNumber = function(s) {
-    return /^[+-]?(\.\d+|\d+\.?\d*)(e[+-]?\d+)?$/.test(s.trim())
+    return !s.trim().search(/^[+-]?(\.\d+|\d+\.?\d*)(e[+-]?\d+)?$/)
 };
