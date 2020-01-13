@@ -10,17 +10,17 @@
 class Solution {
 public:
     int deepestLeavesSum(TreeNode* root) {
-        std::vector<decltype(std::declval<TreeNode>().val)> result;
+        std::vector<int> result;
         std::vector level{root};
         while (root && !std::empty(level))
         {
             result.clear();
             std::transform(std::cbegin(level), std::cend(level), std::back_inserter(result), [](auto const node){return node->val;});
-            std::vector<decltype(root)> nodes;
-            std::for_each(std::cbegin(level), std::cend(level), [&](auto const node){
-                if (node->left) nodes.emplace_back(node->left);
-                if (node->right) nodes.emplace_back(node->right);});
-            level = std::move(nodes);
+            decltype(level) newLevel;
+            std::for_each(std::cbegin(level), std::cend(level), [&newLevel](auto const node){
+                if (node->left) newLevel.emplace_back(node->left);
+                if (node->right) newLevel.emplace_back(node->right);});
+            level = std::move(newLevel);
         }
         return std::accumulate(std::cbegin(result), std::cend(result), 0);
     }
