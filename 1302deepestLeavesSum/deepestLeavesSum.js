@@ -13,7 +13,7 @@
 const lodash = require('lodash')
 
 var deepestLeavesSum = function(root) {
-    let result = []
+    let result = null
     let level = [root]
     while (root && level.length)
     {
