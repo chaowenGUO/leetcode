@@ -7,7 +7,7 @@
 
 class Solution:
     def deepestLeavesSum(self, root: TreeNode) -> int:
-        result, level = [], [root]
+        result, level = None, [root]
         while root and level:
             result = (node.val for node in level)
             level = [child for node in level for child in (node.left, node.right) if child]
