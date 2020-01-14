@@ -9,7 +9,7 @@ public:
             {
                 if (s.at(_) != '0') c = b;
                 auto const substr{s.substr(_ - 1, 2)};
-                if ("10" <=  substr && substr <= "26") c += a;
+                if ("10" <= substr && substr <= "26") c += a;
                 a = b;
                 b = c;
                 c = 0;
