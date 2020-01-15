@@ -10,7 +10,7 @@ class Solution {
 public:
     ListNode* mergeKLists(vector<ListNode*>& lists) {
         std::priority_queue<int, std::vector<int>, std::greater<int>> queue;
-        for (auto _: lists)
+        for (auto&_: lists)
             while (_)
             {
                 queue.emplace(_->val);
@@ -20,7 +20,7 @@ public:
         auto current{result.get()};
         while (!std::empty(queue))
         {
-            current->next = new ListNode(queue.top());
+            current->next = new ListNode{queue.top()};
             queue.pop();
             current = current->next;
         }
