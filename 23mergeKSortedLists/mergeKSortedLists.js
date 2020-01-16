@@ -15,7 +15,7 @@ ListNode.prototype[Symbol.iterator] = function* ()
     let node = this
     while (node)
     {
-        yield node.val
+        yield node
         node = node.next
     }
 }
@@ -23,13 +23,14 @@ ListNode.prototype[Symbol.iterator] = function* ()
 var mergeKLists = function(lists) {
     const queue = []
     for (const _ of lists.filter(_ => !Object.is(_, null))) queue.push(..._)
-    queue.sort((a,b) => a - b)
+    queue.sort((a,b) => a.val - b.val)
     const result = new ListNode(null)
     let current = result
-    for (const _ of queue)
+    while (queue.length)
     {
-        current.next = new ListNode(_)
+        current.next = queue.shift()
         current = current.next
     }
+    current.next = null
     return result.next
 };
