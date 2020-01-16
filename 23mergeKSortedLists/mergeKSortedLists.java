@@ -8,20 +8,21 @@
  */
 class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
-        final PriorityQueue<Integer> queue = new PriorityQueue();
-        for(ListNode node: lists)
-            while (node != null)
+        final PriorityQueue<ListNode> queue = new PriorityQueue<>(Comparator.comparing($ -> $.val));
+        for (ListNode $: lists)
+            while ($ != null)
             {
-                queue.offer(node.val);
-                node = node.next;
+                queue.offer($);
+                $ = $.next;
             }
         final ListNode result = new ListNode(0);
         ListNode current = result;
         while (!queue.isEmpty())
         {
-            current.next = new ListNode(queue.poll());
+            current.next = queue.poll();
             current = current.next;
         }
+        current.next = null;
         return result.next;
     }
 }
