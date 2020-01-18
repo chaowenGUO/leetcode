@@ -3,7 +3,7 @@ class Solution {
         if (n < 2) return 0;
         else
         {
-            List<Integer> result = Collections.nCopies(n, 1).stream().collect(Collectors.toList());
+            final List<Integer> result = Collections.nCopies(n, 1).stream().collect(Collectors.toList());
             result.set(0, 0);
             result.set(1, 0);
             IntStream.range(2, (int)Math.sqrt(n) + 1).forEach(i -> {
