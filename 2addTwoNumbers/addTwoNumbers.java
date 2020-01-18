@@ -8,26 +8,26 @@
  */
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        final LinkedList<Integer> linkedList = new LinkedList<>();
+        final LinkedList<Integer> list = new LinkedList<>();
         int carry = 0;
-        while (l1 != null || l2 != null || carry != 0)
+        while (Objects.nonNull(l1) || Objects.nonNull(l2) || carry != 0)
         {
-            if (l1 != null)
+            if (Objects.nonNull(l1))
             {
                 carry += l1.val;
                 l1 = l1.next;
             }
-            if (l2 != null)
+            if (Objects.nonNull(l2))
             {
                 carry += l2.val;
                 l2 = l2.next;
             }
-            linkedList.offer(carry % 10);
+            list.offer(carry % 10);
             carry /= 10;
         }
         final ListNode result = new ListNode(0);
         ListNode current = result;
-        for (final int $: linkedList)
+        for (final int $: list)
         {
             current.next = new ListNode($);
             current = current.next;
