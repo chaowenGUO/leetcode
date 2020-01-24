@@ -6,12 +6,11 @@
 var isMatch = function(s, p) {
     s = [...s]
     p = [...p]
-    let dp = [true, ...Array(p.length).fill(false)]
-    for (let column = 1; !Object.is(column, dp.length); ++column)
-        if (Object.is(p[column - 1], '*')) dp[column] = dp[column - 1]
-    let prev = [...dp]
+    const dp = [true, ...Array(p.length).fill(false)]
+    for (let column = 1; !Object.is(column, dp.length); ++column) dp[column] = dp[column - 1] && Object.is(p[column - 1], '*')
     for (let row = 1; !Object.is(row, s.length + 1); ++row)
     {
+        const prev = [...dp]
         dp[0] = false
         for (let column = 1; !Object.is(column , dp.length); ++column)
         {
@@ -19,7 +18,6 @@ var isMatch = function(s, p) {
             else if (Object.is(p[column - 1], '*')) dp[column] = dp[column - 1] || prev[column]
             else dp[column] = false
         }
-        [prev, dp] = [dp, prev]
     }
-    return prev[prev.length - 1]
+    return dp[dp.length - 1]
 };
