@@ -6,7 +6,7 @@ public:
         for (std::size_t column{2}; column < std::size(dp); ++column) dp.at(column) = dp.at(column - 2) && p.at(column - 1) == '*';
         for (std::size_t row{1}; row != std::size(s) + 1; ++row)
         {
-            auto prev{dp};
+            auto const prev{dp};
             dp.front() = false;
             for (std::size_t column{1}; column != std::size(dp); ++column)
             {
