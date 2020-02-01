@@ -1,19 +1,6 @@
-enum Roman
-{
-    M(1000), D(500), C(100), L(50), X(10), V(5), I(1);
-    private final int roman;
-    private Roman(final int roman)
-    {
-        this.roman = roman;
-    }
-    public int get()
-    {
-        return this.roman;
-    }
-}
-
 class Solution {
     public int romanToInt(String s) {
-        return new StringBuilder(s).reverse().toString().codePoints().mapToObj($ -> String.format("%c", $)).reduce(new java.util.AbstractMap.SimpleEntry<>(0, "I"), (result, $) -> new java.util.AbstractMap.SimpleEntry<>(Stream.of($, result.getValue()).mapToInt($$ -> Roman.valueOf($$).get()).reduce((a,b) -> a - b).orElse(0) < 0 ? result.getKey() - Roman.valueOf($).get() : result.getKey() + Roman.valueOf($).get(), $), (x,y) -> x).getKey();
+        final var Roman = Map.ofEntries(Map.entry("M", 1000), Map.entry("D", 500), Map.entry("C", 100), Map.entry("L", 50), Map.entry("X", 10), Map.entry("V", 5), Map.entry("I", 1));
+        return new StringBuilder(s).reverse().toString().codePoints().mapToObj($ -> String.format("%c", $)).reduce(Map.entry(0, "I"), (result, $) -> Map.entry(Roman.get($) < Roman.get(result.getValue()) ? result.getKey() - Roman.get($) : result.getKey() + Roman.get($), $), (x, y) -> x).getKey();
     }
 }
