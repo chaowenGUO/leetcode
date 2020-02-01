@@ -1,16 +1,5 @@
 class Solution {
-    private static int even(int num)
-    {
-        int result = 0;
-        while (num != 0)
-        {
-            num /= 10;
-            ++result;
-        }
-        return 1 - result & 1;
-    }
-    
     public int findNumbers(int[] nums) {
-        return Arrays.stream(nums).map(Solution::even).sum();
+        return Math.toIntExact(Arrays.stream(nums).map(num -> 1 - Integer.toString(num).length() & 1).filter($ -> $ == 1).count());
     }
 }
