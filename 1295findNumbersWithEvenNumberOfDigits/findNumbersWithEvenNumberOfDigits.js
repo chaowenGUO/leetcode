@@ -2,17 +2,6 @@
  * @param {number[]} nums
  * @return {number}
  */
-function even(num)
-{
-    let result = 0
-    while (num)
-    {
-        num = Math.trunc(num / 10)
-        ++result
-    }
-    return 1 - result & 1
-}
-
 var findNumbers = function(nums) {
-    return nums.map(even).reduce((a,b) => a + b)
+    return nums.map(num => 1 - num.toString().length & 1).filter(Object.is.bind(null, 1)).length
 };
