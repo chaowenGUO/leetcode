@@ -8,8 +8,8 @@
  */
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        final LinkedList<Integer> list = new LinkedList<>();
-        int carry = 0;
+        final var list = new LinkedList<Integer>();
+        var carry = 0;
         while (Objects.nonNull(l1) || Objects.nonNull(l2) || carry != 0)
         {
             if (Objects.nonNull(l1))
@@ -25,9 +25,9 @@ class Solution {
             list.offer(carry % 10);
             carry /= 10;
         }
-        final ListNode result = new ListNode(0);
-        ListNode current = result;
-        for (final int $: list)
+        final var result = new ListNode(0);
+        var current = result;
+        for (final var $: list)
         {
             current.next = new ListNode($);
             current = current.next;
