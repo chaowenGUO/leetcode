@@ -7,7 +7,7 @@ public:
         for (auto index{std::cbegin(nums)}; index != std::prev(std::cend(nums), 2);)
         {
             const auto num{*index};
-            if (*index > 0) break;
+            if (num > 0) break;
             auto left{std::next(index)}, right{--std::cend(nums)};
             while (left != right)
             {
