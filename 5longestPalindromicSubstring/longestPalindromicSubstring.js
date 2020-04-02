@@ -3,7 +3,7 @@
  * @return {string}
  */
 var longestPalindrome = function(s) {
-    const replace = [...'$#', ...s.replace(/\w/g, group => group + '#')]
+    const replace = Object.freeze([...'$#', ...s.replace(/\w/g, group => group + '#')])
     let center = 0, right = 0
     const radius = Array(replace.length).fill(0)
     for (let _ = 1; !Object.is(_, replace.length); ++_)
