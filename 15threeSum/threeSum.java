@@ -1,21 +1,23 @@
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
-        final ArrayList<List<Integer>> result = new ArrayList<>();
         Arrays.sort(nums);
-        for (int index = 0; index < nums.length - 2;)
+        final var result = new ArrayList<List<Integer>>();
+        for (var index = 0; index < nums.length - 2;)
         {
-            final int num = nums[index];
+            final var num = nums[index];
             if (num > 0) break;
-            int left = index + 1, right = nums.length - 1;
+            var left = index + 1;
+            var right = nums.length - 1;
             while (left != right)
             {
-                final int numsLeft = nums[left], numsRight = nums[right];
-                final int total = num + numsLeft + numsRight;
-                if (total == 0) result.add(Arrays.asList(num, numsLeft, numsRight));
-                if (total <= 0) while (left != right && nums[left] == numsLeft) ++left;
-                if (total >= 0) while (left != right && nums[right] == numsRight)  --right;
+                final var numsLeft = nums[left];
+                final var numsRight = nums[right];
+                final var total = num + numsLeft + numsRight;
+                if (total == 0) result.add(List.of(num, numsLeft, numsRight));
+                if (total <= 0) while (left != right && numsLeft == nums[left]) ++left;
+                if (total >= 0) while (left != right && numsRight == nums[right]) --right;
             }
-            while (nums[index] == num && index < nums.length - 2) ++index;
+            while (index < nums.length - 2 && nums[index] == num) ++index;
         }
         return result;
     }
