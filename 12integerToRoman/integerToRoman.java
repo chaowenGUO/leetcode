@@ -6,7 +6,7 @@ enum Roman
     {
         this.roman = roman;
     }
-    public int get()
+    public int value()
     {
         return this.roman;
     }
@@ -14,11 +14,11 @@ enum Roman
 
 class Solution {
     public String intToRoman(int num) {
-        StringBuilder result = new StringBuilder();
-        for (final Roman roman: Roman.values())
+        final var result = new StringBuilder();
+        for (final var $: Roman.values())
         {
-            result.append(java.util.stream.IntStream.range(0, num / roman.get()).mapToObj($ -> roman.name()).collect(java.util.stream.Collectors.joining()));
-            num %= roman.get();
+            result.append($.name().repeat(num / $.value()));
+            num %= $.value();
         }
         return result.toString();
     }
