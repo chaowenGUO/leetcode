@@ -1,19 +1,20 @@
 class Solution {
     public String longestPalindrome(String s) {
-        final String replace = "$#" + s.replaceAll("\\w", "$0#");
-        int center = 0, right = 0;
-        int[] radius = new int[replace.codePointCount(0, replace.length())];
-        for (int $ = 1; $ != radius.length; ++$)
+        final var replace = "$#" + java.util.regex.Pattern.compile("\\w").matcher(s).replaceAll(group -> group.group() + "#");
+        var center = 0;
+        var right = 0;
+        final var radius = new int[replace.codePointCount(0, replace.length())];
+        for (final var $: (Iterable<Integer>)IntStream.range(1, radius.length)::iterator)
         {
             radius[$] = right > $ ? Math.min(radius[2 * center - $], right - $) : 1;
-            while ($ + radius[$] < radius.length && replace.codePointAt($ + radius[$]) == replace.codePointAt($ - radius[$])) radius[$] += 1;
+            while ($ + radius[$] < radius.length && replace.codePointAt($ + radius[$]) == replace.codePointAt($ - radius[$])) ++radius[$];
             if ($ + radius[$] > right)
             {
                 center = $;
                 right = $ + radius[$];
             }
         }
-        center = IntStream.range(0, radius.length).filter($ -> radius[$] == Arrays.stream(radius).max().orElse(0)).findFirst().orElse(0);
+        center = Arrays.stream(radius).boxed().collect(Collectors.toList()).indexOf(Arrays.stream(radius).max().orElse(0));
         return s.substring((center - radius[center]) / 2, (center + radius[center]) / 2 - 1);
     }
 }
