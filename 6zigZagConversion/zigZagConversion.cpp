@@ -14,7 +14,7 @@ public:
                 row += direction;
             }
             std::stringstream out;
-            std::copy(std::cbegin(result), std::cend(result), std::ostream_iterator<std::string>{out});
+            std::copy(std::cbegin(result), std::cend(result), std::ostream_iterator<decltype(result)::value_type>{out});
             return out.str();
         }
     }
