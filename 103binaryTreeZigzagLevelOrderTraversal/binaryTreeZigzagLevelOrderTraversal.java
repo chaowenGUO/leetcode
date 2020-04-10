@@ -11,16 +11,14 @@ class Solution {
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         final var result = new ArrayList<List<Integer>>();
         var level = Arrays.asList(root);
+        var direction = true;
         while (Objects.nonNull(root) && !level.isEmpty())
         {
-            result.add(level.stream().map(node -> node.val).collect(Collectors.toList()));
-            level = level.stream().flatMap(node -> Stream.of(node.left, node.right)).filter(Objects::nonNull).collect(Collectors.toList());
-        }
-        boolean direction = true;
-        for (List<Integer> $: result)
-        {
-            if (!direction) Collections.reverse($);
+            final var val = level.stream().map(node -> node.val).collect(Collectors.toList());
+            if (!direction) Collections.reverse(val);
             direction = !direction;
+            result.add(val);
+            level = level.stream().flatMap(node -> Stream.of(node.left, node.right)).filter(Objects::nonNull).collect(Collectors.toList());
         }
         return result;
     }
