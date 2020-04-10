@@ -9,14 +9,14 @@
  */
 class Solution {
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
-        final ArrayList<List<Integer>> result = new ArrayList<>();
-        List<TreeNode> level = Arrays.asList(root);
-        while (root != null && !level.isEmpty())
+        final var result = new ArrayList<List<Integer>>();
+        var level = Arrays.asList(root);
+        while (Objects.nonNull(root) && !level.isEmpty())
         {
             result.add(level.stream().map(node -> node.val).collect(Collectors.toList()));
-            level = level.stream().flatMap(node -> Stream.of(node.left, node.right)).filter($ -> $ != null).collect(Collectors.toList());
+            level = level.stream().flatMap(node -> Stream.of(node.left, node.right).filter(Objects::nonNull)).collect(Collectors.toList());
         }
         Collections.reverse(result);
         return result;
-    }
+    } 
 }
