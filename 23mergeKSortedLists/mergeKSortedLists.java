@@ -8,21 +8,13 @@
  */
 class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
-        final PriorityQueue<ListNode> queue = new PriorityQueue<>(Comparator.comparing($ -> $.val));
-        for (ListNode $: lists)
-            while ($ != null)
-            {
-                queue.offer($);
-                $ = $.next;
-            }
-        final ListNode result = new ListNode(0);
-        ListNode current = result;
-        while (!queue.isEmpty())
+        final var result = new ListNode(0);
+        var current = result;
+        for (final var $: (Iterable<Integer>)Stream.of(lists).flatMap(list -> Stream.iterate(list, Objects::nonNull, $ -> $.next)).mapToInt($ -> $.val).sorted()::iterator)
         {
-            current.next = queue.poll();
+            current.next = new ListNode($);
             current = current.next;
         }
-        current.next = null;
         return result.next;
     }
 }
