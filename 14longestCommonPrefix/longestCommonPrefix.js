@@ -6,6 +6,6 @@
 const lodash = require('lodash')
 
 var longestCommonPrefix = function(strs) {
-    const result = lodash.zip(...lodash.takeWhile(lodash.zip(...strs.map(_ => [..._])), _ => Object.is(new Set(_).size, 1))).values().next()
+    const result = lodash.chain(strs.map(lodash.unary(Array.from))).unzip().takeWhile(_ => Object.is(new Set(_).size, 1)).unzip().next()
     return result.done ? '' : result.value.join('')
 };
