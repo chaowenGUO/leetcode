@@ -25,9 +25,9 @@ ListNode.prototype[Symbol.iterator] = function*()
 var mergeKLists = function(lists) {
     const result = new ListNode(null)
     let current = result
-    for (const _ of lodash.chain(lists).filter(_ => !Object.is(_, null)).flatMap(lodash.unary(Array.from)).map(_ => _.val).sort(lodash.subtract))
+    for (const _ of lodash.chain(lists).filter(_ => !Object.is(_, null)).flatMap(lodash.unary(Array.from)).sortBy([_ => _.val]))
     {
-        current.next = new ListNode(_)
+        current.next = _
         current = current.next
     }
     return result.next
