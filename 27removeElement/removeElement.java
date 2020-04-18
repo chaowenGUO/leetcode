@@ -1,7 +1,7 @@
 class Solution {
     public int removeElement(int[] nums, int val) {
-        int index = 0;
-        for (final int num: nums)
+        var index = 0;
+        for (final var num: nums)
             if (num != val)
             {
                 nums[index] = num;
