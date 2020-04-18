@@ -10,27 +10,25 @@
  * @return {ListNode}
  */
 
-ListNode.prototype[Symbol.iterator] = function* ()
+const lodash = require('lodash')
+
+ListNode.prototype[Symbol.iterator] = function*()
 {
-    let node = this
-    while (node)
+    let _ = this
+    while (_)
     {
-        yield node
-        node = node.next
+        yield _
+        _ = _.next
     }
 }
 
 var mergeKLists = function(lists) {
-    const queue = []
-    for (const _ of lists.filter(_ => !Object.is(_, null))) queue.push(..._)
-    queue.sort((a,b) => a.val - b.val)
     const result = new ListNode(null)
     let current = result
-    while (queue.length)
+    for (const _ of lodash.chain(lists).filter(_ => !Object.is(_, null)).flatMap(lodash.unary(Array.from)).map(_ => _.val).sort(lodash.subtract))
     {
-        current.next = queue.shift()
+        current.next = new ListNode(_)
         current = current.next
     }
-    current.next = null
     return result.next
 };
