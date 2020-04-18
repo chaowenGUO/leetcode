@@ -7,7 +7,7 @@
 const lodash = require('lodash')
 
 var threeSumClosest = function(nums, target) {
-    nums.sort((a, b) => a - b)
+    nums.sort(lodash.subtract)
     let result = lodash.chain(nums).slice(0, 3).sum()
     for (let index = 0; !Object.is(index, nums.length - 2);)
     {
