@@ -7,25 +7,29 @@
  * };
  */
 class Solution {
+private:
+    auto list(ListNode* list)
+    {
+        std::forward_list<decltype(std::declval<ListNode>().val)> result;
+        auto position{result.cbefore_begin()};
+        while (list)
+        {
+            position = result.emplace_after(position, list->val);
+            list = list->next;
+        }
+        return result;
+    }
 public:
     ListNode* mergeKLists(vector<ListNode*>& lists) {
-        auto const compare{[](auto const a, auto const b){return a->val > b->val;}};
-        std::priority_queue<ListNode*, std::vector<ListNode*>, decltype(compare)> queue{compare};
-        for (auto&_: lists)
-            while (_)
-            {
-                queue.emplace(_);
-                _ = _->next;
-            }
+        std::forward_list<decltype(std::declval<ListNode>().val)> list;
+        for (auto const&_: lists) list.merge(this->list(_));
         auto const result{std::make_unique<ListNode>(0)};
         auto current{result.get()};
-        while (!std::empty(queue))
+        for (auto const _: list)
         {
-            current->next = queue.top();
-            queue.pop();
+            current->next = new ListNode{_};
             current = current->next;
         }
-        current->next = nullptr;
         return result->next;
     }
 };
